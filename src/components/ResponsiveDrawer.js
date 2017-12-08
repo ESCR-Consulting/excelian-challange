@@ -1,19 +1,30 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 import { withStyles } from 'material-ui/styles';
 import AppBar from 'material-ui/AppBar';
 import Toolbar from 'material-ui/Toolbar';
 import Typography from 'material-ui/Typography';
 import Drawer from 'material-ui/Drawer';
 import Hidden from 'material-ui/Hidden';
-import List, { ListItem, ListItemIcon, ListItemText } from 'material-ui/List';
+import List, {
+    ListItem,
+    ListItemAvatar,
+    ListItemIcon,
+    ListItemSecondaryAction,
+    ListItemText,
+} from 'material-ui/List';
 import AccountCircleIcon from 'material-ui-icons/AccountCircle';
 import StarIcon from 'material-ui-icons/Star';
 import VerifiedUserIcon from 'material-ui-icons/VerifiedUser';
 import PeopleIcon from 'material-ui-icons/People';
 import InboxIcon from 'material-ui-icons/Inbox';
+import MoreVert from 'material-ui-icons/MoreVert';
+import Face from 'material-ui-icons/Face';
+import IconButton from 'material-ui/IconButton';
+import Avatar from 'material-ui/Avatar';
 import MenuAppBar from './MenuAppBar';
-import { connect } from 'react-redux';
+
 const drawerWidth = 240;
 
 const styles = theme => ({
@@ -60,13 +71,6 @@ const styles = theme => ({
     content: {
         backgroundColor: theme.palette.background.default,
         width: '100%',
-        padding: theme.spacing.unit * 3,
-        height: 'calc(100% - 56px)',
-        marginTop: 56,
-        [theme.breakpoints.up('sm')]: {
-            height: 'calc(100% - 64px)',
-            marginTop: 64,
-        },
     },
 });
 
@@ -159,20 +163,39 @@ class ResponsiveDrawer extends React.Component {
                             {drawer}
                         </Drawer>
                     </Hidden>
-                    <AppBar
-                        position="absolute"
-                        color="default"
-                        style={{
-                            position: 'relative'
-                        }}>
-                        <Toolbar>
-                            <Typography type="title" color="inherit">
-                                All Users
-                            </Typography>
-                        </Toolbar>
-                    </AppBar>
                     <main className={classes.content}>
-                        {users.toString()}
+                        <AppBar
+                            position="static"
+                            color="default"
+                            style={{
+                                position: 'relative'
+                            }}>
+                            <Toolbar>
+                                <Typography type="title" color="inherit">
+                                    All Users
+                                </Typography>
+                            </Toolbar>
+                        </AppBar>
+                        {users.map((user, idx) => {
+                            return (<List dense={true} key={idx}>
+                                <ListItem button>
+                                    <ListItemAvatar>
+                                        <Avatar>
+                                            <Face />
+                                        </Avatar>
+                                    </ListItemAvatar>
+                                    <ListItemText
+                                        primary={user.forename}
+                                        secondary={user.email}
+                                    />
+                                    <ListItemSecondaryAction>
+                                        <IconButton aria-label="Actions">
+                                            <MoreVert />
+                                        </IconButton>
+                                    </ListItemSecondaryAction>
+                                </ListItem>
+                            </List>)
+                        })}
                     </main>
                 </div>
             </div>
