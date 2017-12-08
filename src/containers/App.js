@@ -1,22 +1,11 @@
 import React from 'react';
 import { MuiThemeProvider } from 'material-ui/styles';
-import theme from './MUITheme';
-import { createStore } from 'redux';
+import theme from '../style/MUITheme';
 import { Provider } from 'react-redux';
-import ResponsiveDrawer from './ResponsiveDrawer';
+import configureStore from '../redux/configureStore';
+import ResponsiveDrawer from '../components/ResponsiveDrawer';
 
-const reducer = (state, action) => {
-    switch (action.type) {
-        case 'TOGGLE_DRAWER':
-            return {
-                showDrawer: !state.showDrawer
-            }
-        default:
-            return state
-    }
-}
-
-const store = createStore(reducer)
+const store = configureStore();
 
 class App extends React.Component {
     render() {
