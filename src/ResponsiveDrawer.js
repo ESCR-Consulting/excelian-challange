@@ -1,6 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from 'material-ui/styles';
+import AppBar from 'material-ui/AppBar';
+import Toolbar from 'material-ui/Toolbar';
+import Typography from 'material-ui/Typography';
 import Drawer from 'material-ui/Drawer';
 import Hidden from 'material-ui/Hidden';
 import List, { ListItem, ListItemIcon, ListItemText } from 'material-ui/List';
@@ -10,6 +13,7 @@ import VerifiedUserIcon from 'material-ui-icons/VerifiedUser';
 import PeopleIcon from 'material-ui-icons/People';
 import InboxIcon from 'material-ui-icons/Inbox';
 import MenuAppBar from './MenuAppBar';
+
 const drawerWidth = 240;
 
 const styles = theme => ({
@@ -30,6 +34,13 @@ const styles = theme => ({
         marginLeft: drawerWidth,
         [theme.breakpoints.up('sm')]: {
             width: `calc(100% - ${drawerWidth}px)`,
+        },
+    },
+    toolBarHeader: {
+        maxWidth: drawerWidth,
+        position: 'relative',
+        [theme.breakpoints.down('sm')]: {
+            maxWidth: '100%',
         },
     },
     navIconHide: {
@@ -72,6 +83,16 @@ class ResponsiveDrawer extends React.Component {
         const { classes, theme } = this.props;
         const drawer = (
             <div>
+                <AppBar
+                    color="default"
+                    className={classes.toolBarHeader}
+                >
+                    <Toolbar className={classes.toolBarHeader}>
+                        <Typography type="title" color="inherit">
+                            Users
+                        </Typography>
+                    </Toolbar>
+                </AppBar>
                 <List>
                     <ListItem button>
                         <ListItemIcon>
@@ -138,7 +159,20 @@ class ResponsiveDrawer extends React.Component {
                             {drawer}
                         </Drawer>
                     </Hidden>
+                    <AppBar
+                        position="absolute"
+                        color="default"
+                        style={{
+                            position: 'relative'
+                        }}>
+                        <Toolbar>
+                            <Typography type="title" color="inherit">
+                                All Users
+                            </Typography>
+                        </Toolbar>
+                    </AppBar>
                     <main className={classes.content}>
+
                     </main>
                 </div>
             </div>
