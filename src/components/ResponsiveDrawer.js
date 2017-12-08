@@ -185,8 +185,11 @@ class ResponsiveDrawer extends React.Component {
                                         </Avatar>
                                     </ListItemAvatar>
                                     <ListItemText
-                                        primary={user.forename}
+                                        primary={`${user.forename} ${user.surname}`}
                                         secondary={user.email}
+                                    />
+                                    <ListItemText
+                                        primary={user.lastLogin}
                                     />
                                     <ListItemSecondaryAction>
                                         <IconButton aria-label="Actions">
