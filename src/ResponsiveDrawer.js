@@ -28,19 +28,19 @@ const styles = theme => ({
     appBar: {
         position: 'absolute',
         marginLeft: drawerWidth,
-        [theme.breakpoints.up('md')]: {
+        [theme.breakpoints.up('sm')]: {
             width: `calc(100% - ${drawerWidth}px)`,
         },
     },
     navIconHide: {
-        [theme.breakpoints.up('md')]: {
+        [theme.breakpoints.up('sm')]: {
             display: 'none',
         },
     },
     drawerHeader: theme.mixins.toolbar,
     drawerPaper: {
         width: 250,
-        [theme.breakpoints.up('md')]: {
+        [theme.breakpoints.up('sm')]: {
             width: drawerWidth,
             position: 'relative',
             height: '100%',
@@ -111,7 +111,7 @@ class ResponsiveDrawer extends React.Component {
             <div className={classes.root}>
                 <MenuAppBar />
                 <div className={classes.appFrame}>
-                    <Hidden mdUp>
+                    <Hidden smUp>
                         <Drawer
                             type="temporary"
                             anchor={theme.direction === 'rtl' ? 'right' : 'left'}
@@ -127,7 +127,7 @@ class ResponsiveDrawer extends React.Component {
                             {drawer}
                         </Drawer>
                     </Hidden>
-                    <Hidden mdDown implementation="css">
+                    <Hidden smDown implementation="css">
                         <Drawer
                             type="permanent"
                             open

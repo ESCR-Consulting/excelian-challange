@@ -6,7 +6,7 @@ import Toolbar from 'material-ui/Toolbar';
 import Typography from 'material-ui/Typography';
 import IconButton from 'material-ui/IconButton';
 import MenuIcon from 'material-ui-icons/Menu';
-import AccountCircle from 'material-ui-icons/AccountCircle';
+import ChromeReaderMode from 'material-ui-icons/ChromeReaderMode';
 import Menu, { MenuItem } from 'material-ui/Menu';
 
 const styles = theme => ({
@@ -59,7 +59,7 @@ class MenuAppBar extends React.Component {
                                     onClick={this.handleMenu}
                                     color="contrast"
                                 >
-                                    <AccountCircle />
+                                    <ChromeReaderMode />
                                 </IconButton>
                                 <Menu
                                     id="menu-appbar"
