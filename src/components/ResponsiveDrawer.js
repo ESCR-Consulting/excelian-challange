@@ -13,7 +13,7 @@ import VerifiedUserIcon from 'material-ui-icons/VerifiedUser';
 import PeopleIcon from 'material-ui-icons/People';
 import InboxIcon from 'material-ui-icons/Inbox';
 import MenuAppBar from './MenuAppBar';
-
+import { connect } from 'react-redux';
 const drawerWidth = 240;
 
 const styles = theme => ({
@@ -80,7 +80,7 @@ class ResponsiveDrawer extends React.Component {
     };
 
     render() {
-        const { classes, theme } = this.props;
+        const { classes, theme, users } = this.props;
         const drawer = (
             <div>
                 <AppBar
@@ -172,7 +172,7 @@ class ResponsiveDrawer extends React.Component {
                         </Toolbar>
                     </AppBar>
                     <main className={classes.content}>
-
+                        {users.toString()}
                     </main>
                 </div>
             </div>
@@ -185,4 +185,10 @@ ResponsiveDrawer.propTypes = {
     theme: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles, { withTheme: true })(ResponsiveDrawer);
+function mapStateToProps({app: {users} }) {
+    return {
+        users // gives our component access to state through props.users
+    }
+}
+
+export default connect(mapStateToProps)(withStyles(styles, { withTheme: true })(ResponsiveDrawer));
