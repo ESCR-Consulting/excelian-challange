@@ -15,6 +15,7 @@ import Avatar from 'material-ui/Avatar';
 const styles = () => ({
     container: {
         display: 'flex',
+        width: '100%',
     },
     text: {
         flex: '1 1 0'

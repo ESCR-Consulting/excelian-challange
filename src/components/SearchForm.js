@@ -12,11 +12,15 @@ const styles = theme => ({
         flexWrap: 'wrap',
         margin: theme.spacing.unit * 2,
     },
+    form: {
+        width: '100%',
+        padding: theme.spacing.unit * 2,
+    }
 });
 
 let SearchForm = ({ handleSubmit, classes }) =>
     <Paper className={classes.container}>
-        <form onSubmit={handleSubmit} style={{width: "100%"}}>
+        <form onSubmit={handleSubmit} className={classes.form}>
             <label htmlFor="search"><Search/></label>
             <Field name="search" component={SearchInput} type="text" />
             <button type="submit" style={{display: 'none'}}>Submit</button>

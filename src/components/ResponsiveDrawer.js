@@ -53,7 +53,7 @@ const styles = theme => ({
         },
     },
     content: {
-        backgroundColor: theme.palette.background.default,
+        backgroundColor: '#E0E0E0',
         width: '100%',
     },
 });

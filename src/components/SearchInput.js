@@ -10,7 +10,7 @@ const styles = theme => ({
     textField: {
         marginLeft: theme.spacing.unit,
         marginRight: theme.spacing.unit,
-        width: 'auto',
+        width: `calc(100% - ${theme.spacing.unit * 5}px)`,
     },
     menu: {
         width: 200,
@@ -18,8 +18,8 @@ const styles = theme => ({
 });
 const SearchInput = ({ classes }) =>
     <TextField
-        label="With placeholder"
-        placeholder="Placeholder"
+        label="Search"
+        placeholder="Search"
         className={classes.textField}
         margin="normal"
     />
