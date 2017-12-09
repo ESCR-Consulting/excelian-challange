@@ -9,9 +9,7 @@ import Drawer from 'material-ui/Drawer';
 import Hidden from 'material-ui/Hidden';
 import List, {
     ListItem,
-    ListItemAvatar,
     ListItemIcon,
-    ListItemSecondaryAction,
     ListItemText,
 } from 'material-ui/List';
 import AccountCircleIcon from 'material-ui-icons/AccountCircle';
@@ -19,11 +17,8 @@ import StarIcon from 'material-ui-icons/Star';
 import VerifiedUserIcon from 'material-ui-icons/VerifiedUser';
 import PeopleIcon from 'material-ui-icons/People';
 import InboxIcon from 'material-ui-icons/Inbox';
-import MoreVert from 'material-ui-icons/MoreVert';
-import Face from 'material-ui-icons/Face';
-import IconButton from 'material-ui/IconButton';
-import Avatar from 'material-ui/Avatar';
-import MenuAppBar from './MenuAppBar';
+import MenuAppBar from '../components/MenuAppBar';
+import UserList from '../containers/userList';
 
 const drawerWidth = 240;
 
@@ -84,7 +79,7 @@ class ResponsiveDrawer extends React.Component {
     };
 
     render() {
-        const { classes, theme, users } = this.props;
+        const { classes, theme } = this.props;
         const drawer = (
             <div>
                 <AppBar
@@ -176,29 +171,7 @@ class ResponsiveDrawer extends React.Component {
                                 </Typography>
                             </Toolbar>
                         </AppBar>
-                        {users.map((user, idx) => {
-                            return (<List dense={true} key={idx}>
-                                <ListItem button>
-                                    <ListItemAvatar>
-                                        <Avatar>
-                                            <Face />
-                                        </Avatar>
-                                    </ListItemAvatar>
-                                    <ListItemText
-                                        primary={`${user.forename} ${user.surname}`}
-                                        secondary={user.email}
-                                    />
-                                    <ListItemText
-                                        primary={user.lastLogin}
-                                    />
-                                    <ListItemSecondaryAction>
-                                        <IconButton aria-label="Actions">
-                                            <MoreVert />
-                                        </IconButton>
-                                    </ListItemSecondaryAction>
-                                </ListItem>
-                            </List>)
-                        })}
+                        <UserList />
                     </main>
                 </div>
             </div>
