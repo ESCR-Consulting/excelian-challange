@@ -1,9 +1,9 @@
-const INPUT_CHANGED = 'INPUT_CHANGED';
+const TOGGLE_DRAWER = 'TOGGLE_DRAWER';
 
-export function inputChange(value){
+export function handleDrawerToggle(show){
     return {
-        type: INPUT_CHANGED,
-        value
+        type: TOGGLE_DRAWER,
+        show
     }
 }
 
@@ -35,17 +35,14 @@ const initialState = {
             "email": "jDubz@msn.com",
             "lastLogin": "1/10/2015"
         }
-    ]
+    ],
+    mobileOpen: false
 };
 
 export default function reducer(state = initialState, action){
     switch (action.type){
-        case INPUT_CHANGED:
-            return Object.assign(
-                {},
-                state,
-                {newToDo: action.value}
-            );
+        case TOGGLE_DRAWER:
+            return {...state, mobileOpen: !action.show}
         default:
             return state;
     }
