@@ -12,7 +12,7 @@ import Face from 'material-ui-icons/Face';
 import IconButton from 'material-ui/IconButton';
 import Avatar from 'material-ui/Avatar';
 
-const styles = theme => ({
+const styles = () => ({
     text: {
         flex: '1 1 0'
     },

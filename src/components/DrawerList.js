@@ -10,7 +10,7 @@ import VerifiedUserIcon from 'material-ui-icons/VerifiedUser';
 import PeopleIcon from 'material-ui-icons/People';
 import InboxIcon from 'material-ui-icons/Inbox';
 
-const DrawerList = ({ classes, theme, mobileOpen }) =>
+const DrawerList = () =>
     <List>
         <ListItem button>
             <ListItemIcon>

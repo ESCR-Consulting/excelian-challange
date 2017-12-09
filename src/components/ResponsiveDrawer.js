@@ -9,7 +9,7 @@ import Hidden from 'material-ui/Hidden';
 import MenuAppBar from '../components/MenuAppBar';
 import DrawerList from '../components/DrawerList';
 import UserList from '../containers/userList';
-
+import SearchForm from '../components/SearchForm'
 const drawerWidth = 240;
 
 const styles = theme => ({
@@ -127,6 +127,7 @@ const ResponsiveDrawer = ({ classes, theme, mobileOpen }) =>
                         </Typography>
                     </Toolbar>
                 </AppBar>
+                <SearchForm/>
                 <UserList />
             </main>
         </div>
