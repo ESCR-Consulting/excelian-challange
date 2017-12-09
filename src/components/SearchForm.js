@@ -4,23 +4,24 @@ import Paper from 'material-ui/Paper';
 import { withStyles } from 'material-ui/styles';
 import SearchInput from './SearchInput'
 import Search from 'material-ui-icons/Search';
+import UserList from '../containers/userList';
 
 const styles = theme => ({
     container: {
         display: 'flex',
         flexWrap: 'wrap',
+        margin: theme.spacing.unit * 2,
     },
 });
 
 let SearchForm = ({ handleSubmit, classes }) =>
-    <Paper>
-        <form onSubmit={handleSubmit}>
-            <div className={classes.container}>
-                <label htmlFor="search"><Search/></label>
-                <Field name="search" component={SearchInput} type="text" />
-            </div>
+    <Paper className={classes.container}>
+        <form onSubmit={handleSubmit} style={{width: "100%"}}>
+            <label htmlFor="search"><Search/></label>
+            <Field name="search" component={SearchInput} type="text" />
             <button type="submit" style={{display: 'none'}}>Submit</button>
         </form>
+        <UserList />
     </Paper>
 
 
