@@ -6,17 +6,8 @@ import Toolbar from 'material-ui/Toolbar';
 import Typography from 'material-ui/Typography';
 import Drawer from 'material-ui/Drawer';
 import Hidden from 'material-ui/Hidden';
-import List, {
-    ListItem,
-    ListItemIcon,
-    ListItemText,
-} from 'material-ui/List';
-import AccountCircleIcon from 'material-ui-icons/AccountCircle';
-import StarIcon from 'material-ui-icons/Star';
-import VerifiedUserIcon from 'material-ui-icons/VerifiedUser';
-import PeopleIcon from 'material-ui-icons/People';
-import InboxIcon from 'material-ui-icons/Inbox';
 import MenuAppBar from '../components/MenuAppBar';
+import DrawerList from '../components/DrawerList';
 import UserList from '../containers/userList';
 
 const drawerWidth = 240;
@@ -96,38 +87,7 @@ const ResponsiveDrawer = ({ classes, theme, mobileOpen }) =>
                                 </Typography>
                             </Toolbar>
                         </AppBar>
-                        <List>
-                            <ListItem button>
-                                <ListItemIcon>
-                                    <AccountCircleIcon />
-                                </ListItemIcon>
-                                <ListItemText primary="All Users" />
-                            </ListItem>
-                            <ListItem button>
-                                <ListItemIcon>
-                                    <StarIcon />
-                                </ListItemIcon>
-                                <ListItemText primary="Favourites" />
-                            </ListItem>
-                            <ListItem button>
-                                <ListItemIcon>
-                                    <VerifiedUserIcon />
-                                </ListItemIcon>
-                                <ListItemText primary="Administrators" />
-                            </ListItem>
-                            <ListItem button>
-                                <ListItemIcon>
-                                    <PeopleIcon />
-                                </ListItemIcon>
-                                <ListItemText primary="Non-Admins" />
-                            </ListItem>
-                            <ListItem button>
-                                <ListItemIcon>
-                                    <InboxIcon />
-                                </ListItemIcon>
-                                <ListItemText primary="Archived" />
-                            </ListItem>
-                        </List>
+                        <DrawerList/>
                     </div>
                 </Drawer>
             </Hidden>
@@ -150,38 +110,7 @@ const ResponsiveDrawer = ({ classes, theme, mobileOpen }) =>
                                 </Typography>
                             </Toolbar>
                         </AppBar>
-                        <List>
-                            <ListItem button>
-                                <ListItemIcon>
-                                    <AccountCircleIcon />
-                                </ListItemIcon>
-                                <ListItemText primary="All Users" />
-                            </ListItem>
-                            <ListItem button>
-                                <ListItemIcon>
-                                    <StarIcon />
-                                </ListItemIcon>
-                                <ListItemText primary="Favourites" />
-                            </ListItem>
-                            <ListItem button>
-                                <ListItemIcon>
-                                    <VerifiedUserIcon />
-                                </ListItemIcon>
-                                <ListItemText primary="Administrators" />
-                            </ListItem>
-                            <ListItem button>
-                                <ListItemIcon>
-                                    <PeopleIcon />
-                                </ListItemIcon>
-                                <ListItemText primary="Non-Admins" />
-                            </ListItem>
-                            <ListItem button>
-                                <ListItemIcon>
-                                    <InboxIcon />
-                                </ListItemIcon>
-                                <ListItemText primary="Archived" />
-                            </ListItem>
-                        </List>
+                        <DrawerList/>
                     </div>
                 </Drawer>
             </Hidden>

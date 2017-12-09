@@ -13,15 +13,12 @@ import IconButton from 'material-ui/IconButton';
 import Avatar from 'material-ui/Avatar';
 
 const styles = theme => ({
-    root: {
-        width: '100%',
-        height: '100vh',
-        zIndex: 1,
-        overflow: 'hidden',
+    text: {
+        flex: '1 1 0'
     },
 });
 
-const UserList = ({ users }) => users.map((user, idx) =>
+const UserList = ({ users, classes }) => users.map((user, idx) =>
     <List dense={true} key={idx}>
         <ListItem button>
             <ListItemAvatar>
@@ -30,10 +27,12 @@ const UserList = ({ users }) => users.map((user, idx) =>
                 </Avatar>
             </ListItemAvatar>
             <ListItemText
+                className={classes.text}
                 primary={`${user.forename} ${user.surname}`}
                 secondary={user.email}
             />
             <ListItemText
+                className={classes.text}
                 primary={user.lastLogin}
             />
             <ListItemSecondaryAction>
@@ -46,6 +45,7 @@ const UserList = ({ users }) => users.map((user, idx) =>
 )
 
 UserList.propTypes = {
+    users: PropTypes.array.isRequired,
     classes: PropTypes.object.isRequired,
     theme: PropTypes.object.isRequired,
 };
