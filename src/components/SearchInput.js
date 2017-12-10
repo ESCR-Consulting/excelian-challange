@@ -16,12 +16,13 @@ const styles = theme => ({
         width: 200,
     },
 });
-const SearchInput = ({ classes }) =>
+const SearchInput = ({ classes, handleSearchChange }) =>
     <TextField
         label="Search"
         placeholder="Search"
         className={classes.textField}
         margin="normal"
+        onChange={e => handleSearchChange(e.target.value)}
     />
 
 export default withStyles(styles)(SearchInput)

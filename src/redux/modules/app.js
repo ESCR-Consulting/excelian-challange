@@ -1,5 +1,5 @@
 const TOGGLE_DRAWER = 'TOGGLE_DRAWER';
-const SUBMIT_SEARCH = 'SUBMIT_SEARCH';
+const SEARCH_CHANGE = 'SEARCH_CHANGE';
 
 export function handleDrawerToggle(show){
     return {
@@ -8,42 +8,42 @@ export function handleDrawerToggle(show){
     }
 }
 
-export function handleSubmitSearch(value){
+export function handleSearchChange(value){
     return {
-        type: SUBMIT_SEARCH,
+        type: SEARCH_CHANGE,
         value
     }
 }
-
+const users = [
+    {
+        "forename": "Susy",
+        "surname": "Cuningham",
+        "email": "suzy.cuningham@gmail.com",
+        "lastLogin": "1/10/2015"
+    },{
+        "forename": "Bobby",
+        "surname": "Daniels",
+        "email": "bobbyD@outlook.com",
+        "lastLogin": "1/10/2015"
+    },{
+        "forename": "John",
+        "surname": "Walker",
+        "email": "johnnyWalker@blue.com",
+        "lastLogin": "1/10/2015"
+    },{
+        "forename": "Eddy",
+        "surname": "Stevens",
+        "email": "eStevens@yahoo.com",
+        "lastLogin": "1/10/2015"
+    },{
+        "forename": "Jan",
+        "surname": "Williams",
+        "email": "jDubz@msn.com",
+        "lastLogin": "1/10/2015"
+    }
+]
 const initialState = {
-    users: [
-        {
-            "forename": "Susy",
-            "surname": "Cuningham",
-            "email": "suzy.cuningham@gmail.com",
-            "lastLogin": "1/10/2015"
-        },{
-            "forename": "Bobby",
-            "surname": "Daniels",
-            "email": "bobbyD@outlook.com",
-            "lastLogin": "1/10/2015"
-        },{
-            "forename": "John",
-            "surname": "Walker",
-            "email": "johnnyWalker@blue.com",
-            "lastLogin": "1/10/2015"
-        },{
-            "forename": "Eddy",
-            "surname": "Stevens",
-            "email": "eStevens@yahoo.com",
-            "lastLogin": "1/10/2015"
-        },{
-            "forename": "Jan",
-            "surname": "Williams",
-            "email": "jDubz@msn.com",
-            "lastLogin": "1/10/2015"
-        }
-    ],
+    users,
     mobileOpen: true,
     searchValue: '',
 };
@@ -52,8 +52,14 @@ export default function reducer(state = initialState, action){
     switch (action.type){
         case TOGGLE_DRAWER:
             return {...state, mobileOpen: action.show}
-        case SUBMIT_SEARCH:
-            return {...state, searchValue: action.value}
+        case SEARCH_CHANGE:
+            return {
+                ...state,
+                searchValue: action.value,
+                users: action.value !== ""
+                    ? state.users.filter(user => user.forename.includes(action.value))
+                    : users
+            }
         default:
             return state;
     }

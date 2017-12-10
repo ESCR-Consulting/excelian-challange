@@ -1,8 +1,7 @@
 import React from 'react'
-import { Field, reduxForm } from 'redux-form'
 import Paper from 'material-ui/Paper';
 import { withStyles } from 'material-ui/styles';
-import SearchInput from './SearchInput'
+import SearchInput from '../containers/searchInput'
 import Search from 'material-ui-icons/Search';
 import UserList from '../containers/userList';
 
@@ -18,19 +17,13 @@ const styles = theme => ({
     }
 });
 
-let SearchForm = ({ handleSubmit, classes }) =>
+const SearchForm = ({ classes }) =>
     <Paper className={classes.container}>
-        <form onSubmit={handleSubmit} className={classes.form}>
+        <div className={classes.form}>
             <label htmlFor="search"><Search/></label>
-            <Field name="search" component={SearchInput} type="text" />
-            <button type="submit" style={{display: 'none'}}>Submit</button>
-        </form>
+            <SearchInput />
+        </div>
         <UserList />
     </Paper>
-
-
-SearchForm = reduxForm({
-    form: 'search'
-})(SearchForm)
 
 export default withStyles(styles)(SearchForm)
