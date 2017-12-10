@@ -13,7 +13,12 @@ const styles = theme => ({
     },
     form: {
         width: '100%',
-        padding: theme.spacing.unit * 2,
+        paddingLeft: theme.spacing.unit * 2,
+        paddingRight: theme.spacing.unit * 2,
+        marginTop: `-${theme.spacing.unit * 2}px`,
+        '& label + div': {
+            marginTop: 24,
+        }
     }
 });
 

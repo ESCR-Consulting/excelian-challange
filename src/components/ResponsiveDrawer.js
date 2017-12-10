@@ -44,6 +44,9 @@ const styles = theme => ({
             maxWidth: '100%',
         },
     },
+    toolbar: {
+        justifyContent: 'space-between'
+    },
     navIconHide: {
         [theme.breakpoints.up('sm')]: {
             display: 'none',
@@ -126,7 +129,7 @@ const ResponsiveDrawer = ({classes, theme, mobileOpen, handleDrawerToggle, handl
                     style={{
                         position: 'relative'
                     }}>
-                    <Toolbar>
+                    <Toolbar className={classes.toolbar}>
                         <Typography type="title" color="inherit">
                             All Users
                         </Typography>
