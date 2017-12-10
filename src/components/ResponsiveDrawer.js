@@ -6,9 +6,10 @@ import Toolbar from 'material-ui/Toolbar';
 import Typography from 'material-ui/Typography';
 import Drawer from 'material-ui/Drawer';
 import Hidden from 'material-ui/Hidden';
-import MenuAppBar from '../components/MenuAppBar';
+import MenuAppBar from '../containers/menuAppBar';
 import DrawerList from '../components/DrawerList';
 import SearchForm from '../components/SearchForm'
+
 const drawerWidth = 240;
 
 const styles = theme => ({
@@ -58,7 +59,7 @@ const styles = theme => ({
     },
 });
 
-const ResponsiveDrawer = ({ classes, theme, mobileOpen }) =>
+const ResponsiveDrawer = ({classes, theme, mobileOpen, handleDrawerToggle, handleSubmitSearch }) =>
     <div className={classes.root}>
         <MenuAppBar />
         <div className={classes.appFrame}>
@@ -70,7 +71,7 @@ const ResponsiveDrawer = ({ classes, theme, mobileOpen }) =>
                     classes={{
                         paper: classes.drawerPaper,
                     }}
-                    onRequestClose={this.handleDrawerToggle}
+                    onRequestClose={() => handleDrawerToggle(false)}
                     ModalProps={{
                         keepMounted: true, // Better open performance on mobile.
                     }}
@@ -126,7 +127,7 @@ const ResponsiveDrawer = ({ classes, theme, mobileOpen }) =>
                         </Typography>
                     </Toolbar>
                 </AppBar>
-                <SearchForm/>
+                <SearchForm onSubmit={handleSubmitSearch}/>
             </main>
         </div>
     </div>

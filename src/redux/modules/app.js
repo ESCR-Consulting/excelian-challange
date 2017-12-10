@@ -1,9 +1,17 @@
 const TOGGLE_DRAWER = 'TOGGLE_DRAWER';
+const SUBMIT_SEARCH = 'SUBMIT_SEARCH';
 
 export function handleDrawerToggle(show){
     return {
         type: TOGGLE_DRAWER,
         show
+    }
+}
+
+export function handleSubmitSearch(value){
+    return {
+        type: SUBMIT_SEARCH,
+        value
     }
 }
 
@@ -36,13 +44,16 @@ const initialState = {
             "lastLogin": "1/10/2015"
         }
     ],
-    mobileOpen: false
+    mobileOpen: true,
+    searchValue: '',
 };
 
 export default function reducer(state = initialState, action){
     switch (action.type){
         case TOGGLE_DRAWER:
-            return {...state, mobileOpen: !action.show}
+            return {...state, mobileOpen: action.show}
+        case SUBMIT_SEARCH:
+            return {...state, searchValue: action.value}
         default:
             return state;
     }

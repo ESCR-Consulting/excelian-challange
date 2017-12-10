@@ -37,16 +37,20 @@ class MenuAppBar extends React.Component {
     };
 
     render() {
-        const { classes } = this.props;
+        const { classes, mobileOpen, handleDrawerToggle } = this.props;
         const { auth, anchorEl } = this.state;
         const open = Boolean(anchorEl);
-
         return (
             <div className={classes.root}>
                 <AppBar position="static">
                     <Toolbar>
-                        <IconButton className={classes.menuButton} color="contrast" aria-label="Menu">
-                            <MenuIcon />
+                        <IconButton
+                            className={classes.menuButton}
+                            color="contrast"
+                            aria-label="Menu"
+                            onClick={() => handleDrawerToggle(!mobileOpen)}
+                        >
+                            <MenuIcon/>
                         </IconButton>
                         <Typography type="title" color="inherit" className={classes.flex}>
                             Product Name
