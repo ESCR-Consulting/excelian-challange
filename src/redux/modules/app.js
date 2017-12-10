@@ -18,23 +18,23 @@ const users = [
     {
         "name": "Susy Cuningham",
         "email": "suzy.cuningham@gmail.com",
-        "lastLogin": "12/10/2017"
+        "lastLogin": "2017-12-10T00:00:00+00:00"
     },{
         "name": "Bobby Daniels",
         "email": "bobbyD@outlook.com",
-        "lastLogin": "11/10/2017"
+        "lastLogin": "2017-11-10T00:00:00+00:00"
     },{
         "name": "John Walker",
         "email": "johnnyWalker@blue.com",
-        "lastLogin": "6/10/2017"
+        "lastLogin": "2017-06-10T00:00:00+01:00"
     },{
         "name": "Eddy Stevens",
         "email": "eStevens@yahoo.com",
-        "lastLogin": "1/10/2016"
+        "lastLogin": "2016-01-10T00:00:00+00:00"
     },{
         "name": "Jan Williams",
         "email": "jDubz@msn.com",
-        "lastLogin": "12/31/2015"
+        "lastLogin": "2015-12-31T00:00:00+00:00"
     }
 ]
 const initialState = {

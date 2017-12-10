@@ -14,7 +14,7 @@ import Avatar from 'material-ui/Avatar';
 import Hidden from 'material-ui/Hidden';
 import moment from 'moment'
 
-const styles = () => ({
+const styles = theme => ({
     container: {
         display: 'flex',
         width: '100%',
@@ -22,6 +22,7 @@ const styles = () => ({
     text: {
         flex: '1 1 33%'
     },
+    secondaryTypography: theme.typography.caption
 });
 
 const UserList = ({ users, classes }) => users.map((user, idx) =>
@@ -41,7 +42,7 @@ const UserList = ({ users, classes }) => users.map((user, idx) =>
                     />
                     <ListItemText
                         className={classes.text}
-                        primary={user.lastLogin}
+                        primary={moment(user.lastLogin).format("DD/MM/YYYY")}
                     />
                     <ListItemText
                         className={classes.text}
@@ -54,10 +55,11 @@ const UserList = ({ users, classes }) => users.map((user, idx) =>
                         primary={user.name}
                         secondary={
                             <div>
-                                <div>{user.email}</div>
-                                <div>last login: {moment(user.lastLogin).fromNow()}</div>
+                                <div className={classes.secondaryTypography}>{user.email}</div>
+                                <div className={classes.secondaryTypography}>last login: {moment(user.lastLogin).fromNow()}</div>
                             </div>
                         }
+                        disableTypography
                     />
                 </Hidden>
                 <ListItemSecondaryAction>

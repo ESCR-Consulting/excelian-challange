@@ -9,6 +9,11 @@ import Hidden from 'material-ui/Hidden';
 import MenuAppBar from '../containers/menuAppBar';
 import DrawerList from '../components/DrawerList';
 import SearchForm from '../components/SearchForm'
+import IconButton from 'material-ui/IconButton';
+import ViewModule from 'material-ui-icons/ViewModule';
+import Sort from 'material-ui-icons/Sort';
+import Settings from 'material-ui-icons/Settings';
+import MoreVert from 'material-ui-icons/MoreVert';
 
 const drawerWidth = 240;
 
@@ -125,6 +130,20 @@ const ResponsiveDrawer = ({classes, theme, mobileOpen, handleDrawerToggle, handl
                         <Typography type="title" color="inherit">
                             All Users
                         </Typography>
+                        <div>
+                            <IconButton aria-label="View">
+                                <ViewModule />
+                            </IconButton>
+                            <IconButton aria-label="Settings">
+                                <Sort />
+                            </IconButton>
+                            <IconButton aria-label="Settings">
+                                <Settings />
+                            </IconButton>
+                            <IconButton aria-label="More">
+                                <MoreVert />
+                            </IconButton>
+                        </div>
                     </Toolbar>
                 </AppBar>
                 <SearchForm onSubmit={handleSubmitSearch}/>
