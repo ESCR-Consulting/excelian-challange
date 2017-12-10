@@ -1,5 +1,6 @@
 const TOGGLE_DRAWER = 'TOGGLE_DRAWER';
 const SEARCH_CHANGE = 'SEARCH_CHANGE';
+const SORT_USERS = 'SORT_USERS';
 
 export function handleDrawerToggle(show){
     return {
@@ -14,6 +15,14 @@ export function handleSearchChange(value){
         value
     }
 }
+
+export function sortUsers(sortDirection){
+    return {
+        type: SORT_USERS,
+        sortDirection
+    }
+}
+
 const users = [
     {
         "name": "Susy Cuningham",
@@ -41,6 +50,7 @@ const initialState = {
     users,
     mobileOpen: true,
     searchValue: '',
+    sortDirection: true,
 };
 
 export default function reducer(state = initialState, action){
@@ -55,7 +65,23 @@ export default function reducer(state = initialState, action){
                     ? state.users.filter(user => user.name.toLowerCase()
                         .match(action.value.toLowerCase()))
                     : users
-            }
+            };
+        case SORT_USERS:
+            return action.sortDirection
+                ? {...state, users: [...state.users.sort((a,b) =>
+                        a.name < b.name
+                            ? -1
+                            : a.name > b.name
+                            ? 1
+                            : 0)],
+                sortDirection: !action.sortDirection}
+                : {...state, users: [...state.users.sort((a,b) =>
+                        a.name > b.name
+                            ? -1
+                            : a.name < b.name
+                            ? 1
+                            : 0)],
+                sortDirection: !action.sortDirection}
         default:
             return state;
     }

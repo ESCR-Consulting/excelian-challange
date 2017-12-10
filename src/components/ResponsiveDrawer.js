@@ -64,7 +64,7 @@ const styles = theme => ({
     },
 });
 
-const ResponsiveDrawer = ({classes, theme, mobileOpen, handleDrawerToggle, handleSubmitSearch }) =>
+const ResponsiveDrawer = ({classes, theme, mobileOpen, handleDrawerToggle, handleSubmitSearch, sortDirection, sortUsers }) =>
     <div className={classes.root}>
         <MenuAppBar />
         <div className={classes.appFrame}>
@@ -134,8 +134,8 @@ const ResponsiveDrawer = ({classes, theme, mobileOpen, handleDrawerToggle, handl
                             <IconButton aria-label="View">
                                 <ViewModule />
                             </IconButton>
-                            <IconButton aria-label="Settings">
-                                <Sort />
+                            <IconButton aria-label="Sort">
+                                <Sort onClick={() => sortUsers(sortDirection)} />
                             </IconButton>
                             <IconButton aria-label="Settings">
                                 <Settings />

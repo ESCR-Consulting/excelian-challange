@@ -25,8 +25,8 @@ const styles = theme => ({
     secondaryTypography: theme.typography.caption
 });
 
-const UserList = ({ users, classes }) => users.map((user, idx) =>
-    <div className={classes.container} key={idx}>
+const UserList = ({ users, classes }) => users.map((user, idx) => {
+    return <div className={classes.container} key={idx}>
         <List dense={true}>
             <ListItem button>
                 <ListItemAvatar>
@@ -70,6 +70,8 @@ const UserList = ({ users, classes }) => users.map((user, idx) =>
             </ListItem>
         </List>
     </div>
+}
+
 )
 
 UserList.propTypes = {
