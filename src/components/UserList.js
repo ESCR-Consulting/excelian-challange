@@ -33,7 +33,7 @@ const UserList = ({ users, classes }) => users.map((user, idx) =>
                 </ListItemAvatar>
                 <ListItemText
                     className={classes.text}
-                    primary={`${user.forename} ${user.surname}`}
+                    primary={user.name}
                     secondary={user.email}
                 />
                 <ListItemText

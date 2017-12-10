@@ -16,28 +16,23 @@ export function handleSearchChange(value){
 }
 const users = [
     {
-        "forename": "Susy",
-        "surname": "Cuningham",
+        "name": "Susy Cuningham",
         "email": "suzy.cuningham@gmail.com",
         "lastLogin": "1/10/2015"
     },{
-        "forename": "Bobby",
-        "surname": "Daniels",
+        "name": "Bobby Daniels",
         "email": "bobbyD@outlook.com",
         "lastLogin": "1/10/2015"
     },{
-        "forename": "John",
-        "surname": "Walker",
+        "name": "John Walker",
         "email": "johnnyWalker@blue.com",
         "lastLogin": "1/10/2015"
     },{
-        "forename": "Eddy",
-        "surname": "Stevens",
+        "name": "Eddy Stevens",
         "email": "eStevens@yahoo.com",
         "lastLogin": "1/10/2015"
     },{
-        "forename": "Jan",
-        "surname": "Williams",
+        "name": "Jan Williams",
         "email": "jDubz@msn.com",
         "lastLogin": "1/10/2015"
     }
@@ -57,7 +52,8 @@ export default function reducer(state = initialState, action){
                 ...state,
                 searchValue: action.value,
                 users: action.value !== ""
-                    ? state.users.filter(user => user.forename.includes(action.value))
+                    ? state.users.filter(user => user.name.toLowerCase()
+                        .match(action.value.toLowerCase()))
                     : users
             }
         default:
