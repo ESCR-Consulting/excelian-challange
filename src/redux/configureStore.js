@@ -1,13 +1,15 @@
 import { createStore, applyMiddleware, combineReducers } from 'redux';
 import { createLogger } from 'redux-logger';
-import app from './modules/app';
+import users from './modules/users';
+import responsiveDrawer from './modules/responsiveDrawer';
 
 const loggerMiddleware = createLogger(); // initialise logger
 
 const createStoreWithMiddleware = applyMiddleware( loggerMiddleware)(createStore); // apply logger to redux
 
 const reducer = combineReducers({
-    app,
+    users,
+    responsiveDrawer,
 });
 
 const configureStore = (initialState) => createStoreWithMiddleware(reducer, initialState);

@@ -25,7 +25,7 @@ const styles = theme => ({
     secondaryTypography: theme.typography.caption
 });
 
-const UserList = ({ users, classes }) => users.map((user, idx) => {
+const UserList = ({ userList, classes }) => userList.map((user, idx) => {
     return <div className={classes.container} key={idx}>
         <List dense={true}>
             <ListItem button>
@@ -75,7 +75,7 @@ const UserList = ({ users, classes }) => users.map((user, idx) => {
 )
 
 UserList.propTypes = {
-    users: PropTypes.array.isRequired,
+    userList: PropTypes.array.isRequired,
     classes: PropTypes.object.isRequired,
     theme: PropTypes.object.isRequired,
 };

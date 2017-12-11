@@ -1,9 +1,9 @@
 import { connect } from 'react-redux';
 import MenuAppBar from '../components/MenuAppBar'
-import { handleDrawerToggle } from "../redux/modules/app";
+import { handleDrawerToggle } from "../redux/modules/responsiveDrawer";
 
 
-function mapStateToProps({app: {mobileOpen} }) {
+function mapStateToProps({responsiveDrawer: {mobileOpen} }) {
     return {
         mobileOpen // gives our component access to state through props.mobileOpen
     }

@@ -3,7 +3,7 @@ import { MuiThemeProvider } from 'material-ui/styles';
 import theme from '../style/MUITheme';
 import { Provider } from 'react-redux';
 import configureStore from '../redux/configureStore';
-import ResponsiveDrawer from './responsiveDrawer';
+import ResponsiveDrawer from '../containers/responsiveDrawer';
 
 const store = configureStore();
 

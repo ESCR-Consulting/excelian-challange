@@ -1,9 +1,9 @@
  import { connect } from 'react-redux';
 import SearchInput from '../components/SearchInput'
-import { handleSearchChange } from "../redux/modules/app";
+import { handleSearchChange } from "../redux/modules/users";
 
 
-function mapStateToProps({app: {searchValue} }) {
+function mapStateToProps({users: {searchValue} }) {
     return {
         searchValue // gives our component access to state through props.mobileOpen
     }

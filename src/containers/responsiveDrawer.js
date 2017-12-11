@@ -1,9 +1,10 @@
 import { connect } from 'react-redux';
 import ResponsiveDrawer from '../components/ResponsiveDrawer'
-import { handleDrawerToggle, sortUsers } from "../redux/modules/app";
+import { handleDrawerToggle } from "../redux/modules/responsiveDrawer";
+import { sortUsers } from "../redux/modules/users";
 
 
-function mapStateToProps({app: {mobileOpen, sortDirection} }) {
+function mapStateToProps({responsiveDrawer: {mobileOpen}, users: {sortDirection} }) {
     return {
         mobileOpen, // gives our component access to state through props.mobileOpen
         sortDirection // gives our component access to state through props.mobileOpen

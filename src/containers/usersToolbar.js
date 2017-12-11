@@ -1,9 +1,8 @@
 import { connect } from 'react-redux';
 import UsersToolbar from '../components/UsersToolbar'
-import { sortUsers } from "../redux/modules/app";
+import { sortUsers } from "../redux/modules/users";
 
-
-function mapStateToProps({app: {sortDirection} }) {
+function mapStateToProps({users: {sortDirection} }) {
     return {
         sortDirection // gives our component access to state through props.mobileOpen
     }

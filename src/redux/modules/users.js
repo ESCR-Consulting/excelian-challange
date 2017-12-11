@@ -1,13 +1,5 @@
-const TOGGLE_DRAWER = 'TOGGLE_DRAWER';
 const SEARCH_CHANGE = 'SEARCH_CHANGE';
 const SORT_USERS = 'SORT_USERS';
-
-export function handleDrawerToggle(show){
-    return {
-        type: TOGGLE_DRAWER,
-        show
-    }
-}
 
 export function handleSearchChange(value){
     return {
@@ -23,7 +15,7 @@ export function sortUsers(sortDirection){
     }
 }
 
-const users = [
+const userList = [
     {
         "name": "Susy Cuningham",
         "email": "suzy.cuningham@gmail.com",
@@ -47,35 +39,32 @@ const users = [
     }
 ]
 const initialState = {
-    users,
-    mobileOpen: true,
+    userList,
     searchValue: '',
     sortDirection: true,
 };
 
 export default function reducer(state = initialState, action){
     switch (action.type){
-        case TOGGLE_DRAWER:
-            return {...state, mobileOpen: action.show}
         case SEARCH_CHANGE:
             return {
                 ...state,
                 searchValue: action.value,
-                users: action.value !== ""
-                    ? state.users.filter(user => user.name.toLowerCase()
+                userList: action.value !== ""
+                    ? state.userList.filter(user => user.name.toLowerCase()
                         .match(action.value.toLowerCase()))
-                    : users
+                    : userList
             };
         case SORT_USERS:
             return action.sortDirection
-                ? {...state, users: [...state.users.sort((a,b) =>
+                ? {...state, userList: [...state.userList.sort((a,b) =>
                         a.name < b.name
                             ? -1
                             : a.name > b.name
                             ? 1
                             : 0)],
                 sortDirection: !action.sortDirection}
-                : {...state, users: [...state.users.sort((a,b) =>
+                : {...state, userList: [...state.userList.sort((a,b) =>
                         a.name > b.name
                             ? -1
                             : a.name < b.name

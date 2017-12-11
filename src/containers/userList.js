@@ -1,9 +1,9 @@
 import { connect } from 'react-redux';
 import UserList from '../components/UserList'
 
-function mapStateToProps({app: {users} }) {
+function mapStateToProps({users: {userList} }) {
     return {
-        users // gives our component access to state through props.users
+        userList // gives our component access to state through props.users
     }
 }
 export default connect(mapStateToProps)(UserList);
