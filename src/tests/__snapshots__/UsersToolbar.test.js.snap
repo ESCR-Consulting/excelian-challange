@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`UsersToolbar should render correctly 1`] = `
+<UsersToolbar
+  classes={
+    Object {
+      "toolbar": "UsersToolbar-toolbar-1 [object Object]",
+    }
+  }
+  sortDirection={true}
+  sortUsers={
+    Object {
+      "sortDirection": undefined,
+      "type": "SORT_USERS",
+    }
+  }
+/>
+`;

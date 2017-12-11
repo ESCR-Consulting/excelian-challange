@@ -15,7 +15,7 @@ export function sortUsers(sortDirection){
     }
 }
 
-const userList = [
+export const userList = [
     {
         "name": "Susy Cuningham",
         "email": "suzy.cuningham@gmail.com",

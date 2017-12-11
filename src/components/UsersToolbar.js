@@ -38,7 +38,6 @@ const UsersToolbar = ({classes, sortDirection, sortUsers }) =>
 
 UsersToolbar.propTypes = {
     classes: PropTypes.object.isRequired,
-    sortUsers: PropTypes.func.isRequired,
     sortDirection: PropTypes.bool.isRequired,
 };
 
