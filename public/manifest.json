@@ -1,5 +1,6 @@
 {
-    "name": "",
+    "name": "Code Challenge",
+    "short_name": "ESCR",
     "icons": [
         {
             "src": "/android-chrome-192x192.png",
