@@ -6,6 +6,9 @@ import Toolbar from 'material-ui/Toolbar';
 import Typography from 'material-ui/Typography';
 import Drawer from 'material-ui/Drawer';
 import Hidden from 'material-ui/Hidden';
+import Button from 'material-ui/Button';
+import AddIcon from 'material-ui-icons/Add';
+
 import MenuAppBar from '../containers/menuAppBar';
 import UsersToolbar from '../containers/usersToolbar'
 import DrawerList from './DrawerList';
@@ -58,6 +61,10 @@ const styles = theme => ({
         backgroundColor: '#E0E0E0',
         width: '100%',
     },
+    button: {
+        float: 'right',
+        margin: theme.spacing.unit * 2,
+    }
 });
 
 const ResponsiveDrawer = ({ classes, theme, mobileOpen, handleDrawerToggle }) =>
@@ -125,6 +132,11 @@ const ResponsiveDrawer = ({ classes, theme, mobileOpen, handleDrawerToggle }) =>
                     <UsersToolbar/>
                 </AppBar>
                 <SearchForm/>
+                <div className={classes.button}>
+                    <Button fab color="accent" aria-label="add" style={{color: '#fff'}}>
+                        <AddIcon />
+                    </Button>
+                </div>
             </main>
         </div>
     </div>
