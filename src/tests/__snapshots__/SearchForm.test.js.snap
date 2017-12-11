@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SearchForm should render correctly 1`] = `
+<SearchForm
+  classes={
+    Object {
+      "container": "SearchForm-container-1 [object Object]",
+      "form": "SearchForm-form-2 [object Object]",
+    }
+  }
+/>
+`;
