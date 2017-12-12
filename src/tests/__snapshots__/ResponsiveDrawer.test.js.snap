@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ResponsiveDrawer should render correctly 1`] = `
+<ResponsiveDrawer
+  classes={
+    Object {
+      "appBar": "ResponsiveDrawer-appBar-3 [object Object]",
+      "appFrame": "ResponsiveDrawer-appFrame-2 [object Object]",
+      "button": "ResponsiveDrawer-button-9 [object Object]",
+      "content": "ResponsiveDrawer-content-8 [object Object]",
+      "drawerHeader": "ResponsiveDrawer-drawerHeader-6 [object Object]",
+      "drawerPaper": "ResponsiveDrawer-drawerPaper-7",
+      "navIconHide": "ResponsiveDrawer-navIconHide-5 [object Object]",
+      "root": "ResponsiveDrawer-root-1 [object Object]",
+      "toolBarHeader": "ResponsiveDrawer-toolBarHeader-4 [object Object]",
+    }
+  }
+  handleDrawerToggle={
+    Object {
+      "show": true,
+      "type": "TOGGLE_DRAWER",
+    }
+  }
+  mobileOpen={true}
+  theme="[object Object]"
+/>
+`;
