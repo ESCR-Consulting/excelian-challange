@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MenuAppBar should render correctly 1`] = `
+<MenuAppBar
+  classes={
+    Object {
+      "flex": "MenuAppBar-flex-2 [object Object]",
+      "menuButton": "MenuAppBar-menuButton-3 [object Object]",
+      "root": "MenuAppBar-root-1 [object Object]",
+    }
+  }
+  handleDrawerToggle={
+    Object {
+      "show": true,
+      "type": "TOGGLE_DRAWER",
+    }
+  }
+  mobileOpen={true}
+/>
+`;

@@ -1,0 +1,56 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DrawerList should render correctly 1`] = `
+<withStyles(List)>
+  <withStyles(ListItem)
+    button={true}
+  >
+    <withStyles(ListItemIcon)>
+      <pure(AccountCircle) />
+    </withStyles(ListItemIcon)>
+    <withStyles(ListItemText)
+      primary="All Users"
+    />
+  </withStyles(ListItem)>
+  <withStyles(ListItem)
+    button={true}
+  >
+    <withStyles(ListItemIcon)>
+      <pure(Star) />
+    </withStyles(ListItemIcon)>
+    <withStyles(ListItemText)
+      primary="Favourites"
+    />
+  </withStyles(ListItem)>
+  <withStyles(ListItem)
+    button={true}
+  >
+    <withStyles(ListItemIcon)>
+      <pure(VerifiedUser) />
+    </withStyles(ListItemIcon)>
+    <withStyles(ListItemText)
+      primary="Administrators"
+    />
+  </withStyles(ListItem)>
+  <withStyles(ListItem)
+    button={true}
+  >
+    <withStyles(ListItemIcon)>
+      <pure(People) />
+    </withStyles(ListItemIcon)>
+    <withStyles(ListItemText)
+      primary="Non-Admins"
+    />
+  </withStyles(ListItem)>
+  <withStyles(ListItem)
+    button={true}
+  >
+    <withStyles(ListItemIcon)>
+      <pure(Inbox) />
+    </withStyles(ListItemIcon)>
+    <withStyles(ListItemText)
+      primary="Archived"
+    />
+  </withStyles(ListItem)>
+</withStyles(List)>
+`;
